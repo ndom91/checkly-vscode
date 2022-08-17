@@ -2,6 +2,9 @@
   "name": "checkly-code",
   "displayName": "checkly-code",
   "description": "Checkly Ad-Hoc Runner",
+  "author": [
+    "Nico Domino <yo@ndo.dev"
+  ],
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.70.0"
@@ -14,6 +17,8 @@
     "onCommand:checkly-code.helloWorld"
   ],
   "main": "./dist/extension.js",
+  "browser": "./dist/extension.js",
+  "packageManager": "pnpm@latest",
   "contributes": {
     "commands": [
       {

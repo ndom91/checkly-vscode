@@ -7,9 +7,24 @@ let checklyStatusBarItem: vscode.StatusBarItem
 export function activate({ subscriptions }: vscode.ExtensionContext) {
   const runCommandId = 'checkly-code.run'
   subscriptions.push(
-    vscode.commands.registerCommand(runCommandId, () => {
-      // vscode.workspace.fs.readDirectory('**/*', '**/*.ts', '**/*.tsx')
-      vscode.window.showInformationMessage(`Running current file...`)
+    vscode.commands.registerCommand(runCommandId, async () => {
+      const activeTextEditor = vscode.window.activeTextEditor
+      if (activeTextEditor?.document.uri) {
+        const fileUri = activeTextEditor.document.uri
+        if (activeTextEditor.document.uri.scheme === 'untitled') {
+          console.log('Invalid File', fileUri)
+          vscode.window.showInformationMessage(
+            'Invalid File, please save first!'
+          )
+        }
+        const fileContents = await vscode.workspace.fs.readFile(fileUri)
+        console.log('fileName', activeTextEditor.document.fileName)
+        console.log('uri', fileUri)
+        console.log('fileContents', fileContents)
+        vscode.window.showInformationMessage(
+          `Running current file...${fileUri}`
+        )
+      }
     })
   )
 
