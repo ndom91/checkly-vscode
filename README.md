@@ -4,7 +4,7 @@ Run your local Playwright/Puppeteer E2E tests through your Checkly Account direc
 
 ## 📱 Features
 
-- Adds a `[🦝] Run in Checkly` button and command to VS Code
+- Adds a `🦝 Run in Checkly` button and command to VS Code
 - Will report the adhoc test result directly via a VS Code notification
 
 ## 📌 Installation
@@ -16,8 +16,8 @@ Run your local Playwright/Puppeteer E2E tests through your Checkly Account direc
 
 1. You must have a valid Checkly check open in VS Code, with a filename like `*.check.js`
 2. There are two ways to initiate a check run:
-    1. You can use the `[🦝] Run Current File` button in the bottom status bar in VS Code
-    2. The command palette command `[🦝] Run Current File`
+    1. You can use the `🦝 Run Current File` button in the bottom status bar in VS Code
+    2. The command palette command `🦝 Run Current File`
 
 ## 🏋️‍♀️ Contributing
 
