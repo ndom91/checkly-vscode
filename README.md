@@ -13,7 +13,8 @@ You must have a valid Checkly check open in VS Code, with a filename like `*.che
 
 ## 📌 Installation
 
-Search for "Checkly" in your VS Code Extensions sidebar. Alternatively, you can download the `.vsix` file from Github and install it manually.
+- Download the `.vsix` file from the latest [Github Release](https://github.com/ndom91/checkly-vscode/releases) and install it manually
+- [Coming Soon] Search for "Checkly" in your VS Code Extensions menu
 
 ## 🏋️‍♀️ Contributing
 
