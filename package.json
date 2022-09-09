@@ -68,7 +68,7 @@
     "vscode:prepublish": "pnpm compile",
     "compile": "node esbuild",
     "compile:watch": "node esbuild --watch",
-    "package": "vsce package --yarn --no-dependencies --allow-star-activation"
+    "package": "vsce package --yarn --no-dependencies --allow-star-activation --out checkly-vscode-latest.vsix"
   },
   "dependencies": {
     "@types/ws": "^8.5.3",
