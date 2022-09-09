@@ -3,3 +3,5 @@ out
 dist
 .env
 src/fixtures.ts
+src/**/*.js.map
+src/**/*.js
