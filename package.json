@@ -1,18 +1,24 @@
 {
-  "name": "checkly-code",
-  "displayName": "checkly-code",
+  "name": "checkly-vscode",
+  "displayName": "Checkly Adhoc Runner",
+  "icon": "./logo.png",
   "description": "Checkly Extension - Adhoc Check Runner",
+  "publisher": "ndom91",
   "author": [
     "Nico Domino <yo@ndo.dev>"
   ],
-  "version": "0.1.0",
+  "version": "0.2.1",
   "engines": {
     "vscode": "^1.70.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ndom91/code-checkly"
+    "url": "https://github.com/ndom91/checkly-vscode"
   },
+  "bugs": {
+    "url": "https://github.com/ndom91/checkly-vscode/issues"
+  },
+  "homepage": "https://docs.checklyhq.com",
   "categories": [
     "Other"
   ],
