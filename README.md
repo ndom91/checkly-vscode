@@ -1,4 +1,4 @@
-# Checkly VS Code Extension
+# 🦝 Checkly VS Code Extension
 
 Run your local Playwright/Puppeteer E2E tests through your Checkly Account from anywhere in the world!
 
