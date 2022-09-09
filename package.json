@@ -1,11 +1,11 @@
 {
   "name": "checkly-code",
   "displayName": "checkly-code",
-  "description": "Checkly Ad-Hoc Runner",
+  "description": "Checkly Extension - Adhoc Check Runner",
   "author": [
     "Nico Domino <yo@ndo.dev"
   ],
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -23,7 +23,7 @@
     "commands": [
       {
         "command": "checkly-code.run",
-        "title": "[Checkly] Run Current File"
+        "title": "[🦝] Run Current File"
       }
     ],
     "configuration": {
