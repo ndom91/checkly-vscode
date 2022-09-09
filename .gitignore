@@ -5,3 +5,4 @@ dist
 src/fixtures.ts
 src/**/*.js.map
 src/**/*.js
+*.vsix
