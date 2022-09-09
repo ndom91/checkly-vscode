@@ -88,7 +88,7 @@ const submitCheck = async (): Promise<void> => {
   const configuration = vscode.workspace.getConfiguration('checkly-code')
   config.accountId = configuration.get('accountId') as string
   config.token = configuration.get('token') as string
-  const checkRunId = uuid()
+  const websocketClientId = uuid()
 
   // Check for required Checkly Info
   // Prompt user if missing
@@ -116,8 +116,10 @@ const submitCheck = async (): Promise<void> => {
       }
 
       vscode.window.showInformationMessage(
-        `Submitting "${fileName(activeTextEditor.document.fileName)}"...`
+        `Submitting ${fileName(activeTextEditor.document.fileName)}`
       )
+      // Hide "Run Now" button during active run
+      checklyStatusBarItem.hide()
 
       // Fetch AWS IOT Signed URL
       const signedUrl = await getSignedUrl()
@@ -125,12 +127,12 @@ const submitCheck = async (): Promise<void> => {
       // Submit Check Run
       const fileContents = await vscode.workspace.fs.readFile(fileUri)
       runBrowserCheck({
-        websocketClientId: checkRunId,
+        websocketClientId,
         checkScript: Buffer.from(fileContents).toString('utf8'),
       })
 
       // Connect to MQTT over WSS
-      const topic = `browser-check-results/${checkRunId}/#`
+      const topic = `browser-check-results/${websocketClientId}/#`
       const client = mqtt.connect(signedUrl)
 
       // Subscribe to MQTT topics
@@ -154,16 +156,28 @@ const submitCheck = async (): Promise<void> => {
 
         switch (type) {
           case 'run-start':
-            vscode.window.showInformationMessage(`Run started [${checkRunId}]`)
+            vscode.window.showInformationMessage(
+              `Run started [${websocketClientId}]`
+            )
             break
           case 'run-end': {
             console.debug('checkly:run-ended')
             console.debug('checkly:run-results', checkRunResults)
             const passed =
-              !checkRunResults.hasFailures && !checkRunResults.hasErrors
-            vscode.window.showInformationMessage(
-              `Check Run ${passed ? 'Passed' : 'Failed'}`
-            )
+              !checkRunResults.result.hasFailures &&
+              !checkRunResults.result.hasErrors
+
+            if (passed) {
+              vscode.window.showInformationMessage(
+                `Check Passed [${websocketClientId}]`
+              )
+            } else {
+              vscode.window.showWarningMessage(
+                `Check Failed [${websocketClientId}]`
+              )
+            }
+            // Show "Run Now" button again
+            checklyStatusBarItem.show()
           }
         }
       })
@@ -204,6 +218,3 @@ function updateStatusBarItem(): void {
   checklyStatusBarItem.text = `🦝 Run Current File`
   checklyStatusBarItem.show()
 }
-
-// this method is called when your extension is deactivated
-/* export function deactivate() {} */
