@@ -19,6 +19,10 @@ Search for "Checkly" in your VS Code Extensions sidebar. Alternatively, you can 
 
 We're open to most contributions, please stick to the [contributing guidelines]() and formatting settings!
 
+### 🔨 Todo
+
+- Report logs of failed tests
+
 ## 📝 License
 
 MIT
