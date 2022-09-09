@@ -10,7 +10,7 @@ build({
   bundle: true,
   minify: arg === '--minify',
   platform: 'node',
-  outdir: 'out/',
+  outdir: 'dist/',
   external: ['vscode'],
   format: 'cjs',
   sourcemap: true,
