@@ -50,7 +50,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 }
 
 function updateStatusBarItem(): void {
-  checklyStatusBarItem.text = `🦝 $(raccoon) Run Current File`
+  checklyStatusBarItem.text = `🦝 Run Current File`
   checklyStatusBarItem.show()
 }
 
