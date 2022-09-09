@@ -7,7 +7,7 @@
   "author": [
     "Nico Domino <yo@ndo.dev>"
   ],
-  "version": "0.2.5",
+  "version": "0.2.6",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -39,7 +39,7 @@
     "commands": [
       {
         "command": "checkly-code.run",
-        "title": "[🦝] Run Current File"
+        "title": "Checkly: Run Current File"
       }
     ],
     "configuration": {
