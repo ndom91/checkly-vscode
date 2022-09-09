@@ -1,7 +1,7 @@
 {
   "name": "checkly-vscode",
   "displayName": "Checkly Adhoc Runner",
-  "icon": "./logo.png",
+  "icon": "logo.png",
   "description": "Checkly Extension - Adhoc Check Runner",
   "publisher": "ndom91",
   "author": [
