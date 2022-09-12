@@ -10,12 +10,11 @@ Run your local Playwright/Puppeteer E2E tests through your Checkly Account direc
 ## 📌 Installation
 
 - Download the `.vsix` file from the latest [Github Release](https://github.com/ndom91/checkly-vscode/releases) and [install it manually](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
-- `[Coming Soon]` Search for "Checkly" in your VS Code Extensions menu
 
 ## 🏗️ Usage
 
 1. You must have a valid Checkly check open in VS Code, with a filename like `*.check.js`
-2. When attempting to start an adhoc check run for the firs time, it will ask you for two config options:
+2. When attempting to start an adhoc check run for the first time, it will ask you for two config options:
    1. A Checkly `accountId`
    2. A Checkly Bearer Token which you can get from the headers of any authenticated Fetch/XHR request in the web app
 3. Then there are two ways to initiate a check run:
