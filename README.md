@@ -21,6 +21,8 @@ Download the `.vsix` file from the latest [Github Release](https://github.com/nd
    1. You can use the `🦝 Run Current File` button in the bottom status bar in VS Code
    2. The command palette command `Checkly: Run Current File`
 
+Checks are always run in `eu-central-1` for now.
+
 ## 🏋️‍♀️ Contributing
 
 We're open to most contributions, please stick to the [contributing guidelines]() and formatting settings!
