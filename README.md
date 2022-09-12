@@ -9,7 +9,7 @@ Run your local Playwright/Puppeteer E2E tests through your Checkly Account direc
 
 ## 📌 Installation
 
-- Download the `.vsix` file from the latest [Github Release](https://github.com/ndom91/checkly-vscode/releases) and [install it manually](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
+Download the `.vsix` file from the latest [Github Release](https://github.com/ndom91/checkly-vscode/releases) and [install it manually](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
 
 ## 🏗️ Usage
 
