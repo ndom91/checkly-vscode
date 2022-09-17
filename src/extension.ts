@@ -2,8 +2,8 @@ import axios from 'axios'
 import * as vscode from 'vscode'
 import * as WebSocket from 'ws'
 import * as mqtt from 'mqtt'
-import { uuid } from 'uuidv4'
-import { fileName, checkConfig } from './helpers'
+import { v4 as uuidv4 } from 'uuid'
+import { fileName, checkConfig, bundleCheckFile } from './helpers'
 import {
   RUN_COMMAND_ID,
   CLIENT_DISCONNECTED,
@@ -88,7 +88,7 @@ const submitCheck = async (): Promise<void> => {
   const configuration = vscode.workspace.getConfiguration('checkly-code')
   config.accountId = configuration.get('accountId') as string
   config.token = configuration.get('token') as string
-  const websocketClientId = uuid()
+  const websocketClientId = uuidv4()
 
   // Check for required Checkly Info
   // Prompt user if missing
@@ -103,9 +103,6 @@ const submitCheck = async (): Promise<void> => {
 
     const activeTextEditor = vscode.window.activeTextEditor
     if (activeTextEditor?.document.uri) {
-      // Get current file contents
-      const fileUri = activeTextEditor.document.uri
-
       if (activeTextEditor.document.uri.scheme === 'untitled') {
         throw new Error('🦝: Invalid File - Please save first')
       }
@@ -124,11 +121,16 @@ const submitCheck = async (): Promise<void> => {
       // Fetch AWS IOT Signed URL
       const signedUrl = await getSignedUrl()
 
+      // Bundle check contents including helper scripts
+      const esbuildBundle = await bundleCheckFile(
+        activeTextEditor.document.fileName
+      )
+      const bundledCheckScript = esbuildBundle.outputFiles[0].text
+
       // Submit Check Run
-      const fileContents = await vscode.workspace.fs.readFile(fileUri)
       runBrowserCheck({
         websocketClientId,
-        checkScript: Buffer.from(fileContents).toString('utf8'),
+        checkScript: bundledCheckScript,
       })
 
       // Connect to MQTT over WSS

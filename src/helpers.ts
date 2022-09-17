@@ -1,4 +1,6 @@
 import * as vscode from 'vscode'
+import { build } from 'esbuild'
+import { checklyExternalPackages } from './constants'
 
 export const fileName = (url: string): string =>
   url.substring(url.lastIndexOf('/') + 1)
@@ -40,4 +42,17 @@ export const checkConfig = async (config: {
       config.token = token
     }
   }
+}
+
+export const bundleCheckFile = async (filePath: string) => {
+  return build({
+    entryPoints: [filePath],
+    bundle: true,
+    platform: 'node',
+    external: checklyExternalPackages,
+    write: false,
+    format: 'iife',
+    sourcemap: false,
+    watch: false,
+  })
 }
