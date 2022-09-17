@@ -1,6 +1,7 @@
 import * as vscode from 'vscode'
-import { build } from 'esbuild'
 import { checklyExternalPackages } from './constants'
+import { rollup } from 'rollup'
+import commonjs from '@rollup/plugin-commonjs'
 
 export const fileName = (url: string): string =>
   url.substring(url.lastIndexOf('/') + 1)
@@ -44,15 +45,35 @@ export const checkConfig = async (config: {
   }
 }
 
-export const bundleCheckFile = async (filePath: string) => {
-  return build({
-    entryPoints: [filePath],
-    bundle: true,
-    platform: 'node',
-    external: checklyExternalPackages,
-    write: false,
-    format: 'iife',
-    sourcemap: false,
-    watch: false,
+export const bundleCheckFile = async (filePath: string): Promise<string> => {
+  let bundle
+  let code
+
+  try {
+    // create a bundle
+    bundle = await rollup({
+      // core input options
+      external: checklyExternalPackages,
+      input: filePath,
+      plugins: [commonjs()],
+    })
+
+    code = await generateOutputs(bundle)
+  } catch (error) {
+    console.error(error)
+  }
+  if (bundle) {
+    // closes the bundle
+    await bundle.close()
+  }
+  return code
+}
+
+async function generateOutputs(bundle: any) {
+  const { output } = await bundle.generate({
+    format: 'cjs',
+    exports: 'default',
   })
+
+  return output[0].code
 }

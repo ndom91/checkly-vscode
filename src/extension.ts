@@ -122,15 +122,14 @@ const submitCheck = async (): Promise<void> => {
       const signedUrl = await getSignedUrl()
 
       // Bundle check contents including helper scripts
-      const esbuildBundle = await bundleCheckFile(
+      const bundleOutput = await bundleCheckFile(
         activeTextEditor.document.fileName
       )
-      const bundledCheckScript = esbuildBundle.outputFiles[0].text
 
       // Submit Check Run
       runBrowserCheck({
         websocketClientId,
-        checkScript: bundledCheckScript,
+        checkScript: bundleOutput,
       })
 
       // Connect to MQTT over WSS

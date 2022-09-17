@@ -7,7 +7,7 @@
   "author": [
     "Nico Domino <yo@ndo.dev>"
   ],
-  "version": "0.3.0",
+  "version": "0.3.1",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -23,8 +23,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*",
-    "onCommand:checkly-code.helloWorld"
+    "*"
   ],
   "keywords": [
     "checkly",
@@ -71,9 +70,11 @@
     "package": "vsce package --yarn --no-dependencies --allow-star-activation --out checkly-vscode-latest.vsix"
   },
   "dependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
     "@types/ws": "^8.5.3",
     "axios": "^0.27.2",
     "mqtt": "^4.3.7",
+    "rollup": "^2.79.0",
     "uuid": "^9.0.0",
     "ws": "^8.8.1"
   },
