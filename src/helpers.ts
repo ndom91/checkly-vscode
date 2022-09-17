@@ -45,14 +45,12 @@ export const checkConfig = async (config: {
   }
 }
 
-export const bundleCheckFile = async (filePath: string): Promise<string> => {
+export const bundleCheckFile = async (filePath: string) => {
   let bundle
   let code
 
   try {
-    // create a bundle
     bundle = await rollup({
-      // core input options
       external: checklyExternalPackages,
       input: filePath,
       plugins: [commonjs()],
@@ -63,7 +61,6 @@ export const bundleCheckFile = async (filePath: string): Promise<string> => {
     console.error(error)
   }
   if (bundle) {
-    // closes the bundle
     await bundle.close()
   }
   return code
