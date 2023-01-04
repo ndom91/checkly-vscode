@@ -23,7 +23,7 @@ const config = {
 const getSignedUrl = async (): Promise<string> => {
   try {
     const signedUrl = await axios.get(
-      `https://api.checklyhq.com/sockets/signed-url`,
+      `https://api.checklyhq.com/next/sockets/signed-url`,
       {
         headers: {
           'X-Checkly-Account': config.accountId,
@@ -67,7 +67,8 @@ const runBrowserCheck = async ({
 
   try {
     const runRequest = await axios.post(
-      `https://api.checklyhq.com/accounts/${config.accountId}/browser-check-runs`,
+      // `https://api.checklyhq.com/accounts/${config.accountId}/browser-check-runs`,
+      `https://api.checklyhq.com/next/checks/run/${check.checkType.toLowerCase()}`,
       { ...check, websocketClientId, runLocation: 'eu-central-1' },
       {
         headers: {
