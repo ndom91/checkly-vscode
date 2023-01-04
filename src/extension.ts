@@ -67,7 +67,6 @@ const runBrowserCheck = async ({
 
   try {
     const runRequest = await axios.post(
-      // `https://api.checklyhq.com/accounts/${config.accountId}/browser-check-runs`,
       `https://api.checklyhq.com/next/checks/run/${check.checkType.toLowerCase()}`,
       { ...check, websocketClientId, runLocation: 'eu-central-1' },
       {
