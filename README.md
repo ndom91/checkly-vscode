@@ -4,12 +4,14 @@ Run your local Playwright/Puppeteer E2E tests through your Checkly Account direc
 
 ## 📱 Features
 
-- Adds a `🦝 Run in Checkly` button and command to VS Code
+- Adds a `🦝 Run in Checkly` button and command palette option to VS Code
 - Will report the adhoc test result directly via a VS Code notification
 
 ## 📌 Installation
 
-Download the `.vsix` file from the latest [Github Release](https://github.com/ndom91/checkly-vscode/releases) and [install it manually](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
+1. Search 'Checkly' on the VS Code Extension Sidebar
+
+2. Or you can install it manually by downloading the `.vsix` file from the latest [Github Release](https://github.com/ndom91/checkly-vscode/releases) and choosing ["install from a vsix"](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
 
 ## 🏗️ Usage
 
