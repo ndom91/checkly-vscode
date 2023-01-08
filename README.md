@@ -15,11 +15,10 @@ Run your local Playwright/Puppeteer E2E tests through your Checkly Account direc
 
 ## 🏗️ Usage
 
-1. You must have a valid Checkly check open in VS Code, with a filename like `*.check.js`
-2. When attempting to start an adhoc check run for the first time, it will ask you for two config options:
+1. When attempting to start an adhoc check run for the first time, it will ask you for two config options:
    1. A Checkly `accountId`
    2. A Checkly API Key
-3. Then there are two ways to initiate a check run:
+2. Then there are two ways to initiate a check run:
    1. You can use the `🦝 Run Current File` button in the bottom status bar in VS Code
    2. The command palette command `Checkly: Run Current File`
 

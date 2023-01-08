@@ -7,8 +7,8 @@ export const fileName = (url: string): string =>
   url.substring(url.lastIndexOf('/') + 1)
 
 export const checkConfig = async (config: {
-  accountId: string
-  token: string
+  accountId: string | undefined
+  token: string | undefined
 }) => {
   if (!config.accountId || !config.token) {
     console.debug(
@@ -23,8 +23,8 @@ export const checkConfig = async (config: {
 
     const token = await vscode.window.showInputBox({
       ignoreFocusOut: true,
-      placeHolder: 'eyJh...',
-      prompt: 'Checkly Bearer Token',
+      placeHolder: 'cu_...',
+      prompt: 'Checkly API Key',
     })
 
     if (accountId && token) {
@@ -45,6 +45,7 @@ export const checkConfig = async (config: {
   }
 }
 
+// Currently unused - keeping for potential future use
 export const bundleCheckFile = async (filePath: string) => {
   let bundle
   let code
