@@ -2,10 +2,12 @@
 
 Run your local Playwright/Puppeteer E2E tests through your Checkly Account directly from VS Code!
 
+> Now using the new [`@checkly/cli`](https://github.com/checkly/checkly-cli) package!
+
 ## 📱 Features
 
 - Adds a `🦝 Run in Checkly` button and command palette option to VS Code
-- Will report the adhoc test result directly via a VS Code notification
+- Will report the adhoc test result directly in VS Code
 
 ## 📌 Installation
 
@@ -15,24 +17,16 @@ Run your local Playwright/Puppeteer E2E tests through your Checkly Account direc
 
 ## 🏗️ Usage
 
-1. You must have a valid Checkly check open in VS Code, with a filename like `*.check.js`
-2. When attempting to start an adhoc check run for the first time, it will ask you for two config options:
-   1. A Checkly `accountId`
-   2. A Checkly API Key
-3. Then there are two ways to initiate a check run:
+1. When attempting to start an adhoc check run for the very first time, it will ask you for two config options:
+   1. A Checkly Account ID (found in your Checkly "Settings" page)
+   2. A Checkly API Key (Also found in "Settings" -> "User API Keys")
+2. Then there are two ways to initiate a check run:
    1. You can use the `🦝 Run Current File` button in the bottom status bar in VS Code
    2. The command palette command `Checkly: Run Current File`
-
-Checks are always run in `eu-central-1` for now.
 
 ## 🏋️‍♀️ Contributing
 
 We're open to most contributions, please stick to the [contributing guidelines]() and formatting settings!
-
-### Todo
-
-- Report logs of failed tests
-- Allow customising check run location
 
 ## 📝 License
 

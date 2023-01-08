@@ -24,10 +24,10 @@ build({
       logger.error(...errors)
     }
 
-    logger.log('successfully bundled checkly-vscode 🚀')
+    logger.log('Successfully bundled checkly-vscode 🚀')
 
     if (isWatchMode) {
-      logger.log('watching... 🕰')
+      logger.log('Watching... 🕰')
     } else {
       process.exit()
     }
