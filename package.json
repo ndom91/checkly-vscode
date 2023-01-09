@@ -5,7 +5,7 @@
   "description": "Checkly Extension - Adhoc Check Runner",
   "publisher": "ndom91",
   "author": "Nico Domino <yo@ndo.dev>",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -68,7 +68,7 @@
     "package": "vsce package --yarn --no-dependencies --allow-star-activation --out checkly-vscode-latest.vsix"
   },
   "dependencies": {
-    "@checkly/cli": "0.3.1-alpha7",
+    "@checkly/cli": "0.3.3",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@types/ws": "^8.5.3",
     "axios": "^0.27.2",

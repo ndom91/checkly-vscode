@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@checkly/cli': 0.3.1-alpha7
+  '@checkly/cli': 0.3.3
   '@commitlint/cli': ^17.0.3
   '@commitlint/config-conventional': ^17.0.3
   '@rollup/plugin-commonjs': ^22.0.2
@@ -33,7 +33,7 @@ specifiers:
   ws: ^8.8.1
 
 dependencies:
-  '@checkly/cli': 0.3.1-alpha7_typescript@4.7.4
+  '@checkly/cli': 0.3.3_typescript@4.7.4
   '@rollup/plugin-commonjs': 22.0.2_rollup@2.79.0
   '@types/ws': 8.5.3
   axios: 0.27.2
@@ -89,8 +89,8 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
-  /@checkly/cli/0.3.1-alpha7_typescript@4.7.4:
-    resolution: {integrity: sha512-jS2CsvEwsYdSzCnvW2dDQFtSbVTL8u93Q6sypvS1oxZ4hxYe1P2eWuf/hf1k/Khw0jEhc2+qMq4V3YCLRv/reA==}
+  /@checkly/cli/0.3.3_typescript@4.7.4:
+    resolution: {integrity: sha512-CUrwPAJLNGCUdo3H8zLMhBaZ5H504E29gcnrJh7Viua11c9cJNyoGmavcTdSRC255+53zsv3QxDrMNoqAe61fw==}
     hasBin: true
     dependencies:
       '@oclif/core': 1.23.0
@@ -101,11 +101,15 @@ packages:
       async-mqtt: 2.6.3
       axios: 1.2.1
       chalk: 4.1.2
+      ci-info: 3.7.1
       conf: 10.2.0
       dotenv: 16.0.3
       glob: 8.0.3
+      indent-string: 4.0.0
       inquirer: 8.2.3
       jwt-decode: 3.1.2
+      log-symbols: 4.1.0
+      luxon: 3.2.0
       open: 8.4.0
       p-queue: 6.6.2
       uuid: 9.0.0
@@ -698,23 +702,17 @@ packages:
       through: 2.3.8
     dev: true
 
-  /acorn-jsx/5.3.2_acorn@8.8.0:
+  /acorn-jsx/5.3.2_acorn@8.8.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      acorn: 8.8.0
+      acorn: 8.8.1
     dev: true
 
   /acorn-walk/8.2.0:
     resolution: {integrity: sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==}
     engines: {node: '>=0.4.0'}
-
-  /acorn/8.8.0:
-    resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-    dev: true
 
   /acorn/8.8.1:
     resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
@@ -1095,6 +1093,11 @@ packages:
   /chownr/1.1.4:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
     dev: true
+
+  /ci-info/3.7.1:
+    resolution: {integrity: sha512-4jYS4MOAaCIStSRwiuxc4B8MYhIe676yO1sYGzARnjXkWpmzZMMYxY6zu8WYWDhSuth5zhrQ1rhNSibyyvv4/w==}
+    engines: {node: '>=8'}
+    dev: false
 
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
@@ -1919,8 +1922,8 @@ packages:
     resolution: {integrity: sha512-ORs1Rt/uQTqUKjDdGCyrtYxbazf5umATSf/K4qxjmZHORR6HJk+2s/2Pqe+Kk49HHINC/xNIrGfgh8sZcll0ng==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.8.0
-      acorn-jsx: 5.3.2_acorn@8.8.0
+      acorn: 8.8.1
+      acorn-jsx: 5.3.2_acorn@8.8.1
       eslint-visitor-keys: 3.3.0
     dev: true
 
@@ -2766,6 +2769,11 @@ packages:
     dependencies:
       yallist: 4.0.0
 
+  /luxon/3.2.0:
+    resolution: {integrity: sha512-Namj3XqoJjFekq/JHQEaaAv4zyE/fyyDBrMEBnIL2s/X54SC8W5Ea0uej1TRXUArWec8OojsAVsGBYhNRjpMVw==}
+    engines: {node: '>=12'}
+    dev: false
+
   /magic-string/0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
@@ -3565,7 +3573,7 @@ packages:
   /rxjs/7.5.6:
     resolution: {integrity: sha512-dnyv2/YsXhnm461G+R/Pe5bWP41Nm6LBXEYWI6eiFP4fiwx6WRI/CD0zbdVAudd9xwLEF2IDcKXLHit0FYjUzw==}
     dependencies:
-      tslib: 2.4.0
+      tslib: 2.4.1
 
   /safe-buffer/5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
@@ -3943,12 +3951,8 @@ packages:
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
 
-  /tslib/2.4.0:
-    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
-
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
-    dev: false
 
   /tsutils/3.21.0_typescript@4.7.4:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
