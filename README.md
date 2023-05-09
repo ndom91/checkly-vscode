@@ -2,7 +2,7 @@
 
 Run your local Playwright/Puppeteer E2E tests through your Checkly Account directly from VS Code!
 
-> Now using the new [`@checkly/cli`](https://github.com/checkly/checkly-cli) package!
+> Now using the new [`checkly`](https://github.com/checkly/checkly-cli) CLI package!
 
 ## 📱 Features
 
