@@ -11,9 +11,8 @@ Run your local Playwright/Puppeteer E2E tests through your Checkly Account direc
 
 ## 📌 Installation
 
-1. Search 'Checkly' on the VS Code Extension Sidebar
-
-2. Or you can install it manually by downloading the `.vsix` file from the latest [Github Release](https://github.com/ndom91/checkly-vscode/releases) and choosing ["install from a vsix"](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
+A. Search 'Checkly' on the VS Code Extension Sidebar
+B. Or you can install it manually by downloading the `.vsix` file from the latest [Github Release](https://github.com/ndom91/checkly-vscode/releases) and choosing ["install from a vsix"](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
 
 ## 🏗️ Usage
 
@@ -23,6 +22,8 @@ Run your local Playwright/Puppeteer E2E tests through your Checkly Account direc
 2. Then there are two ways to initiate a check run:
    1. You can use the `🦝 Run Current File` button in the bottom status bar in VS Code
    2. The command palette command `Checkly: Run Current File`
+
+The check will be run with the [`checkly`](https://npm.im/checkly) CLI command `checkly test --record ${file}`
 
 ## 🏋️‍♀️ Contributing
 

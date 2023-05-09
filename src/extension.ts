@@ -58,9 +58,9 @@ const runCheck = async (): Promise<void> => {
       }
       await vscode.commands.executeCommand('workbench.action.terminal.clear')
 
-      // Use the locally installed @checkly/cli to run the current file
+      // Use the locally installed 'checkly' package to run the current file
       terminal.sendText(
-        `CHECKLY_API_KEY=${config.token} CHECKLY_ACCOUNT_ID=${config.accountId} ./node_modules/.bin/checkly test ${file}`
+        `CHECKLY_API_KEY=${config.token} CHECKLY_ACCOUNT_ID=${config.accountId} ./node_modules/.bin/checkly test --record ${file}`
       )
       terminal.show()
     }
